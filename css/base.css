@@ -866,6 +866,16 @@ h4 { font-size: 1.1rem; }
 }
 
 /* === Utility: hidden === */
+/* === Components: Footer === */
+.footer {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--color-on-surface-variant);
+  border-top: 1px solid var(--color-outline-variant);
+  margin-top: auto;
+}
+
 .hidden { display: none !important; }
 .sr-only {
   position: absolute;

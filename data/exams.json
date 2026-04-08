@@ -1,0 +1,34 @@
+{
+  "exams": [
+    {
+      "id": "exam-01",
+      "title": "AICE Associate 모의고사 1회",
+      "subtitle": "Titanic 데이터셋 기반 데이터 분석",
+      "questionCount": 14,
+      "tags": ["pandas", "seaborn", "sklearn", "tensorflow"],
+      "colabUrl": "#",
+      "lectureUrl": "#",
+      "enabled": true
+    },
+    {
+      "id": "exam-02",
+      "title": "AICE Associate 모의고사 2회",
+      "subtitle": "준비 중",
+      "questionCount": 0,
+      "tags": [],
+      "colabUrl": "#",
+      "lectureUrl": "#",
+      "enabled": false
+    },
+    {
+      "id": "exam-03",
+      "title": "AICE Associate 모의고사 3회",
+      "subtitle": "준비 중",
+      "questionCount": 0,
+      "tags": [],
+      "colabUrl": "#",
+      "lectureUrl": "#",
+      "enabled": false
+    }
+  ]
+}

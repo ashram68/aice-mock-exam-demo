@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AICE 가상 모의고사</title>
+  <meta name="description" content="AICE 자격증 가상 모의고사 - 도서 구매자 전용 학습 서비스">
+  <style>
+    body { margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: system-ui, sans-serif; background: #fbf8ff; color: #31323b; }
+    .loading { text-align: center; }
+    .spinner { width: 32px; height: 32px; border: 3px solid #ddd; border-top-color: #4f5d8c; border-radius: 50%; animation: spin 0.6s linear infinite; margin: 0 auto 1rem; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+  <script>
+    (function () {
+      var isMobile = /Android|iPhone|iPad|iPod|webOS|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent)
+        || window.innerWidth < 768;
+
+      if (isMobile) {
+        window.location.replace('mobile.html');
+        return;
+      }
+
+      try {
+        var auth = JSON.parse(localStorage.getItem('aice_auth'));
+        if (auth && auth.authenticated) {
+          window.location.replace('lobby.html');
+          return;
+        }
+      } catch (e) {}
+
+      window.location.replace('auth.html');
+    })();
+  </script>
+</head>
+<body>
+  <div class="loading">
+    <div class="spinner"></div>
+    <p>로딩 중...</p>
+  </div>
+</body>
+</html>

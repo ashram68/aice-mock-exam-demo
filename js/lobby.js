@@ -110,7 +110,7 @@
             <button class="btn ${btnClass} w-full" onclick="event.stopPropagation(); location.href='viewer.html?exam=${exam.id}'">
               ${btnText}
             </button>
-            <a href="https://colab.research.google.com/github/ashram68/aice-mock-exam-demo/blob/main/data/exam-01/AICE_%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC_1%ED%9A%8C_Titanic.ipynb" target="_blank" rel="noopener" class="btn btn-secondary" onclick="event.stopPropagation();" style="white-space:nowrap;">
+            <a href="https://colab.research.google.com/github/ashram68/aice-mock-exam-demo/blob/main/data/exam-01/AICE_%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC_1%ED%9A%8C_Titanic.ipynb" target="_blank" rel="noopener" class="btn btn-secondary" onclick="event.stopPropagation(); event.preventDefault(); if(window.openColabWithNotice){openColabWithNotice(this.href);}else{window.open(this.href,'_blank','noopener');} return false;" style="white-space:nowrap;">
               Colab 응시
             </a>
           </div>

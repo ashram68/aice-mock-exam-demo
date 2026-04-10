@@ -379,7 +379,7 @@
     const colabUrl = 'https://colab.research.google.com/github/ashram68/aice-mock-exam-demo/blob/main/data/exam-01/AICE_%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC_1%ED%9A%8C_Titanic.ipynb';
     const actionsHtml = `
       <div class="flex flex-wrap gap-sm mt-lg">
-        <a href="${colabUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+        <a href="${colabUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" onclick="event.preventDefault(); if(window.openColabWithNotice){openColabWithNotice(this.href);}else{window.open(this.href,'_blank','noopener');} return false;">
           🔗 Google Colab 실습
         </a>
         <button class="btn btn-secondary btn-sm" onclick="openSearch()">

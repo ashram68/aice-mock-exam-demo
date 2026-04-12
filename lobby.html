@@ -12,13 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script>
-    (function(){
-      var t = localStorage.getItem('aice_theme') || 'a';
-      document.write('<link rel="stylesheet" href="css/theme-' + t + '.css" id="theme-css">');
-      document.documentElement.setAttribute('data-theme', t);
-    })();
-  </script>
+  <link rel="stylesheet" href="css/theme-a.css">
   <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
@@ -34,62 +28,65 @@
 
   <!-- Header -->
   <header class="header">
-    <div class="logo">군수사령부 <span class="logo-sub">AICE ASSOCIATE 모의고사</span></div>
+    <div class="logo">군수사령부 AICE</div>
+    <div class="header-search">
+      <input type="text" placeholder="허용 라이브러리(NumPy, pandas 등) 공식 문서 검색" disabled>
+      <span class="header-search-icon">🔍</span>
+    </div>
     <div class="header-actions">
-      <button class="theme-toggle" aria-label="Toggle theme"></button>
       <button class="btn btn-ghost btn-sm" id="logout-btn">로그아웃</button>
     </div>
   </header>
 
   <!-- Main -->
-  <main class="container" style="padding-top: 2rem; padding-bottom: 3rem;">
-    <!-- Welcome Section -->
-    <div class="animate-in">
-      <h1 style="margin-bottom: 0.25rem;">학습 현황</h1>
-      <p class="text-muted mb-lg">모의고사를 선택하여 학습을 시작하세요.</p>
-
-      <!-- Stats -->
-      <div class="stats-grid mb-lg" id="stats-grid">
-        <!-- Rendered by JS -->
-      </div>
-
-      <!-- Overall Progress -->
-      <div class="card mb-lg" id="progress-section" style="display:none;">
-        <div class="flex flex-between items-center mb-sm">
-          <h3>전체 진행률</h3>
-          <span class="text-sm text-muted" id="progress-text">0/0</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-bar-fill" id="progress-fill" style="width: 0%"></div>
+  <main class="lobby-main">
+  <div class="container" style="padding-top: 2rem; padding-bottom: 3rem;">
+    <div class="lobby-layout">
+      <!-- Left: Exam Cards Grid -->
+      <div class="lobby-cards">
+        <div class="grid grid-2" id="exam-grid">
+          <!-- Rendered by JS -->
         </div>
       </div>
-    </div>
 
-    <!-- Exam Cards -->
-    <h2 class="mb-md" style="animation: fadeInUp 0.4s ease 0.1s both;">회차별 모의고사</h2>
-    <div class="grid grid-3" id="exam-grid">
-      <!-- Rendered by JS -->
-    </div>
-
-    <!-- Info Cards -->
-    <div class="grid grid-2 mt-xl" style="animation: fadeInUp 0.4s ease 0.2s both;">
-      <div class="card">
-        <h3 style="margin-bottom: 0.5rem;">🖥️ 실습 환경 안내</h3>
-        <p class="text-sm text-muted">Google Colab을 통해 별도 설치 없이 Python 실습이 가능합니다. 각 문항의 해설에서 Colab 링크를 확인하세요.</p>
+      <!-- Right: Sidebar Stats -->
+      <div class="lobby-sidebar">
+        <div class="lobby-stat-card">
+          <h3>전체 통계</h3>
+          <div class="lobby-stat-row">
+            <span>전체 회차</span>
+            <span id="stat-total-exams">8</span>
+          </div>
+          <div class="lobby-stat-row">
+            <span>활성 회차</span>
+            <span id="stat-active-exams">1</span>
+          </div>
+          <div class="lobby-stat-row">
+            <span>총 문항 수</span>
+            <span id="stat-total-questions">14</span>
+          </div>
+        </div>
+        <div class="lobby-stat-card">
+          <h3>내 점수 기록<br><small style="font-weight:400; color:#7a8290;">(Local Storage)</small></h3>
+          <div class="lobby-stat-row">
+            <span>학습 완료 문항</span>
+            <span id="stat-viewed">0</span>
+          </div>
+          <div class="lobby-stat-row">
+            <span>진행률</span>
+            <span id="stat-progress">0%</span>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3 style="margin-bottom: 0.5rem;">📖 학습 가이드</h3>
-        <p class="text-sm text-muted">사전 코드를 먼저 실행한 후 순서대로 문제를 풀어보세요. 해설과 Tip을 통해 핵심 개념을 정리할 수 있습니다.</p>
-      </div>
     </div>
+  </div>
   </main>
 
-  <footer class="footer">&copy; 2026 AICE 가상 모의고사. All rights reserved.</footer>
+  <footer class="footer">&copy; 2026 군수사령부 AICE 모의고사. All rights reserved.</footer>
 
   <!-- Toast -->
   <div class="toast" id="toast"></div>
 
-  <script src="js/theme.js"></script>
   <script src="js/colab-notice.js"></script>
   <script src="js/lobby.js"></script>
   <script src="js/protection.js"></script>

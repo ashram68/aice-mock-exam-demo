@@ -1,0 +1,95 @@
+/* Theme A: Indigo Scholar (Light Mode) */
+:root {
+  /* Primary */
+  --color-primary: #4f5d8c;
+  --color-primary-dim: #43517f;
+  --color-primary-container: #b7c5fa;
+  --color-on-primary: #faf8ff;
+  --color-on-primary-container: #303e6b;
+
+  /* Secondary */
+  --color-secondary: #595e72;
+  --color-secondary-dim: #4d5266;
+  --color-secondary-container: #dde1fa;
+  --color-on-secondary: #faf8ff;
+
+  /* Tertiary */
+  --color-tertiary: #6d567e;
+  --color-tertiary-container: #e4c7f6;
+  --color-on-tertiary-container: #543f65;
+
+  /* Surface & Background */
+  --color-surface: #fbf8ff;
+  --color-surface-dim: #dad9e5;
+  --color-surface-container: #efedf7;
+  --color-surface-container-low: #f5f2fb;
+  --color-surface-container-high: #e9e7f2;
+  --color-surface-container-highest: #e3e1ee;
+  --color-surface-container-lowest: #ffffff;
+  --color-background: #fbf8ff;
+
+  /* Text */
+  --color-on-surface: #31323b;
+  --color-on-surface-variant: #5e5e69;
+  --color-on-background: #31323b;
+
+  /* Outline */
+  --color-outline: #7a7a85;
+  --color-outline-variant: #b1b1bd;
+
+  /* Status */
+  --color-error: #a83836;
+  --color-error-container: #fa746f;
+  --color-success: #2e7d32;
+  --color-success-light: #e8f5e9;
+  --color-warning: #f57f17;
+
+  /* Inverse */
+  --color-inverse-surface: #0d0e12;
+  --color-inverse-on-surface: #9d9ca2;
+
+  /* Typography */
+  --font-headline: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-label: 'Inter', sans-serif;
+  --font-code: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Shape */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-full: 9999px;
+
+  /* Elevation (tonal layering, no heavy shadows) */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,0.08);
+
+  /* Glassmorphism (not used in Theme A) */
+  --glass-bg: transparent;
+  --glass-border: transparent;
+  --glass-blur: 0;
+
+  /* Specific component tokens */
+  --card-bg: #ffffff;
+  --card-border: transparent;
+  --card-hover-shadow: var(--shadow-md);
+  --input-bg: #ffffff;
+  --input-border: var(--color-outline-variant);
+  --input-focus-border: var(--color-primary);
+  --badge-bg: var(--color-primary-container);
+  --badge-text: var(--color-on-primary-container);
+  --code-bg: #1e1e2e;
+  --code-text: #cdd6f4;
+  --sidebar-bg: var(--color-surface-container-low);
+  --sidebar-active-bg: var(--color-primary-container);
+  --sidebar-active-text: var(--color-on-primary-container);
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-text: var(--color-on-primary);
+  --btn-primary-hover: var(--color-primary-dim);
+  --progress-bg: var(--color-surface-container-high);
+  --progress-fill: var(--color-primary);
+  --tooltip-bg: var(--color-inverse-surface);
+  --tooltip-text: var(--color-inverse-on-surface);
+}

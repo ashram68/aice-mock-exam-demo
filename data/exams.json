@@ -2,30 +2,80 @@
   "exams": [
     {
       "id": "exam-01",
-      "title": "AICE Associate 모의고사 1회",
-      "subtitle": "Titanic 데이터셋 기반 데이터 분석",
+      "title": "1회차 모의고사",
+      "subtitle": "기초 데이터 분석",
+      "description": "Titanic 데이터셋 기반 14문항.\nEDA, 전처리, 머신러닝, 딥러닝 모델링.",
       "questionCount": 14,
-      "tags": ["pandas", "seaborn", "sklearn", "tensorflow"],
-      "colabUrl": "#",
+      "colabUrl": "https://colab.research.google.com/github/ashram68/aice-mock-exam-demo/blob/main/data/exam-01/AICE_%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC_1%ED%9A%8C_Titanic.ipynb",
       "lectureUrl": "#",
       "enabled": true
     },
     {
       "id": "exam-02",
-      "title": "AICE Associate 모의고사 2회",
-      "subtitle": "준비 중",
+      "title": "2회차 모의고사",
+      "subtitle": "기초 데이터 분석",
+      "description": "데이터 전처리와 시각화 중심.\n기초 통계 분석 및 모델 평가.",
       "questionCount": 0,
-      "tags": [],
       "colabUrl": "#",
       "lectureUrl": "#",
       "enabled": false
     },
     {
       "id": "exam-03",
-      "title": "AICE Associate 모의고사 3회",
-      "subtitle": "준비 중",
+      "title": "3회차 모의고사",
+      "subtitle": "기초 데이터 분석",
+      "description": "결측치 처리와 피처 엔지니어링.\n분류 모델 구축 및 성능 비교.",
       "questionCount": 0,
-      "tags": [],
+      "colabUrl": "#",
+      "lectureUrl": "#",
+      "enabled": false
+    },
+    {
+      "id": "exam-04",
+      "title": "4회차 모의고사",
+      "subtitle": "기초 데이터 분석",
+      "description": "상관관계 분석과 시각화 활용.\n회귀 모델 학습 및 평가.",
+      "questionCount": 0,
+      "colabUrl": "#",
+      "lectureUrl": "#",
+      "enabled": false
+    },
+    {
+      "id": "exam-05",
+      "title": "5회차 모의고사",
+      "subtitle": "기초 데이터 분석",
+      "description": "원-핫 인코딩과 스케일링 적용.\n앙상블 모델 비교 분석.",
+      "questionCount": 0,
+      "colabUrl": "#",
+      "lectureUrl": "#",
+      "enabled": false
+    },
+    {
+      "id": "exam-06",
+      "title": "6회차 모의고사",
+      "subtitle": "기초 데이터 분석",
+      "description": "피벗 테이블과 그룹 분석.\n딥러닝 모델 구축 및 튜닝.",
+      "questionCount": 0,
+      "colabUrl": "#",
+      "lectureUrl": "#",
+      "enabled": false
+    },
+    {
+      "id": "exam-07",
+      "title": "7회차 모의고사",
+      "subtitle": "기초 데이터 분석",
+      "description": "이상치 탐지와 데이터 정제.\n모델 성능 평가 지표 비교.",
+      "questionCount": 0,
+      "colabUrl": "#",
+      "lectureUrl": "#",
+      "enabled": false
+    },
+    {
+      "id": "exam-08",
+      "title": "8회차 모의고사",
+      "subtitle": "기초 데이터 분석",
+      "description": "종합 데이터 분석 실전 문제.\nEDA부터 모델 배포까지 전 과정.",
+      "questionCount": 0,
       "colabUrl": "#",
       "lectureUrl": "#",
       "enabled": false

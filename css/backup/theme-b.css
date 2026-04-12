@@ -1,0 +1,114 @@
+/* Theme B: Neural Core / Digital Alchemist (Dark Mode) */
+:root {
+  /* Primary */
+  --color-primary: #ba9eff;
+  --color-primary-dim: #8453f2;
+  --color-primary-container: #3a2566;
+  --color-on-primary: #1a0a33;
+  --color-on-primary-container: #d9c7ff;
+
+  /* Secondary */
+  --color-secondary: #5af8fb;
+  --color-secondary-dim: #3dd8db;
+  --color-secondary-container: #0a3d3e;
+  --color-on-secondary: #0a3d3e;
+
+  /* Tertiary */
+  --color-tertiary: #ff97b5;
+  --color-tertiary-container: #4a1a2a;
+  --color-on-tertiary-container: #ffd0dd;
+
+  /* Surface & Background */
+  --color-surface: #0d0d1c;
+  --color-surface-dim: #08080f;
+  --color-surface-container: #121223;
+  --color-surface-container-low: #0f0f1e;
+  --color-surface-container-high: #1a1a30;
+  --color-surface-container-highest: #24243a;
+  --color-surface-container-lowest: #08080f;
+  --color-background: #0d0d1c;
+
+  /* Text */
+  --color-on-surface: #e8e6f0;
+  --color-on-surface-variant: #a9a7b6;
+  --color-on-background: #e8e6f0;
+
+  /* Outline */
+  --color-outline: #5a5870;
+  --color-outline-variant: rgba(138, 130, 168, 0.15);
+
+  /* Status */
+  --color-error: #ff6b6b;
+  --color-error-container: #4a1515;
+  --color-success: #4caf50;
+  --color-success-light: #1a331a;
+  --color-warning: #F59E0B;
+
+  /* Inverse */
+  --color-inverse-surface: #e8e6f0;
+  --color-inverse-on-surface: #1a1a30;
+
+  /* Typography */
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-label: 'Space Grotesk', sans-serif;
+  --font-code: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Shape */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* Elevation (tonal stacking) */
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.3);
+  --shadow-md: 0 2px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 4px 24px rgba(0,0,0,0.5);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(18, 18, 35, 0.6);
+  --glass-border: rgba(138, 130, 168, 0.15);
+  --glass-blur: 20px;
+
+  /* Specific component tokens */
+  --card-bg: #24243a;
+  --card-border: var(--glass-border);
+  --card-hover-shadow: 0 0 20px rgba(186, 158, 255, 0.15);
+  --input-bg: #1a1a30;
+  --input-border: var(--color-outline);
+  --input-focus-border: var(--color-primary);
+  --badge-bg: var(--color-primary-container);
+  --badge-text: var(--color-on-primary-container);
+  --code-bg: #0a0a16;
+  --code-text: #e8e6f0;
+  --sidebar-bg: var(--color-surface-container);
+  --sidebar-active-bg: var(--color-primary-container);
+  --sidebar-active-text: var(--color-on-primary-container);
+  --btn-primary-bg: linear-gradient(135deg, var(--color-primary), var(--color-primary-dim));
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: linear-gradient(135deg, #c9b3ff, #9a6ff5);
+  --progress-bg: var(--color-surface-container-high);
+  --progress-fill: var(--color-primary);
+  --tooltip-bg: var(--color-surface-container-highest);
+  --tooltip-text: var(--color-on-surface);
+}
+
+/* Theme B specific: glassmorphism panels */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+}
+
+/* Theme B specific: neon glow on interactive elements */
+.glow-hover:hover {
+  box-shadow: 0 0 16px rgba(186, 158, 255, 0.3), 0 0 32px rgba(186, 158, 255, 0.1);
+}
+
+/* Theme B specific: label uppercase + letter spacing */
+.label-styled {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

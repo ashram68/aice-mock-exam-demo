@@ -15,73 +15,63 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <!-- FOUC prevention: apply theme before paint -->
-  <script>
-    (function(){
-      var t = localStorage.getItem('aice_theme') || 'a';
-      document.write('<link rel="stylesheet" href="css/theme-' + t + '.css" id="theme-css">');
-      document.documentElement.setAttribute('data-theme', t);
-    })();
-  </script>
+  <link rel="stylesheet" href="css/theme-a.css">
   <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
   <!-- Header -->
-  <header class="header">
-    <div class="logo">군수사령부 <span class="logo-sub">AICE ASSOCIATE 모의고사</span></div>
-    <div class="header-actions">
-      <button class="theme-toggle" aria-label="Toggle theme"></button>
-    </div>
+  <header class="header" style="justify-content: center;">
+    <div class="logo">군수사령부 <span class="logo-sub">AICE</span></div>
   </header>
 
   <!-- Main Content -->
   <main style="min-height: calc(100vh - 57px); display: flex; align-items: center; justify-content: center;">
     <div class="container-narrow text-center">
       <div class="animate-in">
-        <!-- Icon -->
-        <div style="font-size: 3rem; margin-bottom: 1rem;">📖</div>
+        <!-- Auth Card (white background) -->
+        <div class="auth-card">
+          <h1 class="auth-card-title">군수사령부 AICE<br>도서 구매 인증</h1>
+          <p class="auth-card-desc">
+            도서에 인쇄된 인증코드(6자리)를 입력하세요.
+          </p>
 
-        <h1 style="margin-bottom: 0.5rem;">도서 인증</h1>
-        <p class="text-muted" style="margin-bottom: 2rem;">
-          교재에 포함된 인증 코드 6자리를 입력해주세요.
-        </p>
+          <!-- OTP Input -->
+          <form id="auth-form" autocomplete="off">
+            <div class="flex flex-center gap-sm" id="otp-container" style="margin-bottom: 0.5rem;">
+              <input type="text" class="otp-input" maxlength="1" inputmode="text" autocomplete="off" data-index="0" aria-label="인증코드 1자리">
+              <input type="text" class="otp-input" maxlength="1" inputmode="text" autocomplete="off" data-index="1" aria-label="인증코드 2자리">
+              <input type="text" class="otp-input" maxlength="1" inputmode="text" autocomplete="off" data-index="2" aria-label="인증코드 3자리">
+              <div style="width: 12px; display: flex; align-items: center; justify-content: center; color: #9aa0a8; font-size: 1.25rem; font-weight: 700;">-</div>
+              <input type="text" class="otp-input" maxlength="1" inputmode="text" autocomplete="off" data-index="3" aria-label="인증코드 4자리">
+              <input type="text" class="otp-input" maxlength="1" inputmode="text" autocomplete="off" data-index="4" aria-label="인증코드 5자리">
+              <input type="text" class="otp-input" maxlength="1" inputmode="text" autocomplete="off" data-index="5" aria-label="인증코드 6자리">
+            </div>
 
-        <!-- OTP Input -->
-        <form id="auth-form" autocomplete="off">
-          <div class="flex flex-center gap-sm" id="otp-container" style="margin-bottom: 0.5rem;">
-            <input type="text" class="otp-input" maxlength="1" inputmode="text" autocomplete="off" data-index="0" aria-label="인증코드 1자리">
-            <input type="text" class="otp-input" maxlength="1" inputmode="text" autocomplete="off" data-index="1" aria-label="인증코드 2자리">
-            <input type="text" class="otp-input" maxlength="1" inputmode="text" autocomplete="off" data-index="2" aria-label="인증코드 3자리">
-            <div style="width: 12px; display: flex; align-items: center; justify-content: center; color: var(--color-outline); font-size: 1.25rem; font-weight: 700;">-</div>
-            <input type="text" class="otp-input" maxlength="1" inputmode="text" autocomplete="off" data-index="3" aria-label="인증코드 4자리">
-            <input type="text" class="otp-input" maxlength="1" inputmode="text" autocomplete="off" data-index="4" aria-label="인증코드 5자리">
-            <input type="text" class="otp-input" maxlength="1" inputmode="text" autocomplete="off" data-index="5" aria-label="인증코드 6자리">
-          </div>
+            <p class="text-xs" style="margin-bottom: 1.5rem; color: #7a8290;">영문 대문자 + 숫자 조합</p>
 
-          <p class="text-xs text-muted" style="margin-bottom: 1.5rem;">영문 대문자 + 숫자 조합</p>
+            <div class="error-msg" id="error-msg">인증 코드가 올바르지 않습니다.</div>
 
-          <div class="error-msg" id="error-msg">인증 코드가 올바르지 않습니다.</div>
+            <button type="submit" class="btn btn-primary btn-lg w-full" id="verify-btn" disabled style="margin-top: 1rem;">
+              인증하기
+            </button>
 
-          <button type="submit" class="btn btn-primary btn-lg w-full" id="verify-btn" disabled style="margin-top: 1rem;">
-            인증하기
-          </button>
+            <p class="text-xs" id="lockout-msg" style="margin-top: 0.75rem; display: none; color: #7a8290;"></p>
+          </form>
+        </div>
 
-          <p class="text-xs text-muted" id="lockout-msg" style="margin-top: 0.75rem; display: none;"></p>
-        </form>
-
-        <!-- Help text -->
+        <!-- Help text (navy background) -->
         <div style="margin-top: 2.5rem;">
-          <p class="text-sm text-muted">인증 코드는 교재 뒷면 또는 부록에서 확인할 수 있습니다.</p>
+          <p class="text-sm text-muted">인증에 어려움이 있으시면 고객센터로 문의해 주세요.</p>
         </div>
       </div>
     </div>
   </main>
 
-  <footer class="footer">&copy; 2026 AICE 가상 모의고사. All rights reserved.</footer>
+  <footer class="footer">&copy; 2026 군수사령부 AICE 모의고사.<br>All rights reserved.</footer>
 
   <!-- Toast -->
   <div class="toast" id="toast"></div>
 
-  <script src="js/theme.js"></script>
   <script src="js/auth.js"></script>
   <script src="js/protection.js"></script>
 </body>

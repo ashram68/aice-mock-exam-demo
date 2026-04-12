@@ -13,22 +13,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script>
-    (function(){
-      var t = localStorage.getItem('aice_theme') || 'a';
-      document.write('<link rel="stylesheet" href="css/theme-' + t + '.css" id="theme-css">');
-      document.documentElement.setAttribute('data-theme', t);
-    })();
-  </script>
+  <link rel="stylesheet" href="css/theme-a.css">
   <link rel="stylesheet" href="css/base.css">
   <style>
     .mobile-hero {
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1.5rem;
+      align-items: stretch;
+      justify-content: flex-start;
+      padding: 0;
       text-align: center;
     }
     .mobile-icon {
@@ -41,7 +34,7 @@
       gap: 0.75rem;
       width: 100%;
       max-width: 320px;
-      margin-top: 2rem;
+      margin: 2rem auto 0;
     }
     .feature-list {
       list-style: none;
@@ -65,57 +58,43 @@
   </style>
 </head>
 <body>
-  <div class="mobile-hero">
-    <div class="animate-in">
-      <div class="mobile-icon">💻</div>
-      <h1 style="margin-bottom: 0.5rem;">PC에서 접속해주세요</h1>
-      <p class="text-muted" style="max-width: 300px; margin: 0 auto;">
-        AICE 모의고사는 코드 실습을 위해<br>PC 환경에 최적화되어 있습니다.
-      </p>
+  <!-- Header -->
+  <header class="header" style="justify-content: center;">
+    <div class="logo">군수사령부 <span class="logo-sub">AICE</span></div>
+  </header>
 
-      <ul class="feature-list">
-        <li><span class="icon">📝</span> 14문항 데이터 분석 모의고사</li>
-        <li><span class="icon">💡</span> 문항별 정답 및 상세 해설</li>
-        <li><span class="icon">🔗</span> Google Colab 실습 연결</li>
-        <li><span class="icon">📊</span> 학습 진행률 자동 저장</li>
-      </ul>
-
-      <div class="mobile-actions">
-        <button class="btn btn-primary btn-lg w-full" id="copy-link-btn">
-          링크 복사하기
-        </button>
-        <button class="btn btn-secondary btn-lg w-full" id="share-btn">
-          공유하기
-        </button>
+  <div class="mobile-hero" style="padding: 0;">
+    <div class="animate-in" style="width: 100%;">
+      <!-- Book Cover (navy background, image overlaps into white) -->
+      <div style="background: var(--color-surface); padding: 2rem 1.5rem 0; text-align: center;">
+        <img src="assets/book-cover.png" alt="AICE 데이터 분석 모의고사" style="width: 160px; margin: 0 auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.3); position: relative; margin-bottom: -40px;">
       </div>
 
-      <!-- Demo Note -->
-      <div class="demo-note" style="max-width: 320px; margin-top: 2rem; text-align: left;">
-        <p><strong>[Demo] 공유 기능 안내</strong></p>
-        <p style="margin-top: 0.5rem;">
-          본 데모에서는 <strong>Web Share API</strong>로 공유 기능을 구현했습니다.
-          모바일 기기에서 카카오톡, 문자, 메일 등 설치된 앱으로 바로 공유할 수 있습니다.
+      <!-- White section: text + buttons -->
+      <div style="background: #ffffff; padding: 3.5rem 1.5rem 2rem; text-align: center;">
+        <h1 style="margin-bottom: 0.5rem; font-size: 1.5rem; color: #152345;">PC 실습 환경에<br>최적화된 서비스입니다.</h1>
+        <p style="max-width: 300px; margin: 0 auto 2rem; color: #5a6577;">
+          원활한 실습과 해설 강의 수강을 위해<br>PC에서 접속해 주세요.
         </p>
-        <p style="margin-top: 0.75rem;">
-          <strong>실제 서비스에서는 Kakao SDK 연동</strong>으로 카카오톡 직접 공유를 구현할 예정입니다.
-        </p>
-        <p style="margin-top: 0.75rem;">
-          <strong>정적 사이트에서 Kakao SDK 사용 시:</strong>
-        </p>
-        <ul style="margin-top: 0.25rem; padding-left: 1.25rem; list-style: disc;">
-          <li><strong>장점</strong> - 무료(일 30만 건), CDN 로드만으로 동작, 서버 불필요, 카카오톡 맞춤 템플릿(썸네일/제목/설명) 지원</li>
-          <li><strong>단점</strong> - JavaScript 앱 키가 프론트엔드에 노출됨(도메인 제한 설정으로 보완), 커스텀 템플릿은 Kakao 앱 검수 필요, SDK 버전 업데이트 시 수동 대응</li>
-        </ul>
+
+        <div class="mobile-actions" style="margin-top: 0;">
+          <button class="btn btn-primary btn-lg w-full" id="share-btn">
+            카카오톡으로 링크 보내기
+          </button>
+          <button class="btn btn-secondary btn-lg w-full" id="copy-link-btn" style="background: #ffffff; color: #152345; border: 1px solid #d0d5dd;">
+            URL 복사
+          </button>
+        </div>
       </div>
+
     </div>
   </div>
 
-  <footer class="footer">&copy; 2026 AICE 가상 모의고사. All rights reserved.</footer>
+  <footer class="footer">&copy; 2026 군수사령부 AICE 모의고사.<br>All rights reserved.</footer>
 
   <!-- Toast -->
   <div class="toast" id="toast"></div>
 
-  <script src="js/theme.js"></script>
   <script>
     // Link copy
     document.getElementById('copy-link-btn').addEventListener('click', function () {

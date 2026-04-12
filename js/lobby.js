@@ -65,7 +65,7 @@
       const pct = exam.questionCount > 0 ? Math.round(viewed / exam.questionCount * 100) : 0;
 
       let statusBadge = '';
-      let btnText = '학습 시작';
+      let btnText = '정답 및 해설';
       let btnClass = 'btn-primary';
 
       if (!exam.enabled) {
@@ -79,17 +79,15 @@
 
       if (viewed === 0) {
         statusBadge = '<span class="badge">미시작</span>';
-        btnText = '학습 시작';
+        btnText = '정답 및 해설';
       } else if (viewed < exam.questionCount) {
         statusBadge = `<span class="badge badge-warning">진행중 ${pct}%</span>`;
-        btnText = '이어서 학습';
+        btnText = '정답 및 해설';
       } else {
         statusBadge = '<span class="badge badge-success">완료</span>';
-        btnText = '다시 보기';
+        btnText = '정답 및 해설';
         btnClass = 'btn-secondary';
       }
-
-      const tagsHtml = exam.tags.map(t => `<span class="tag">${t}</span>`).join('');
 
       return `
         <div class="card exam-card card-clickable" onclick="location.href='viewer.html?exam=${exam.id}'">
@@ -98,7 +96,6 @@
             ${statusBadge}
           </div>
           <p class="text-sm text-muted mt-sm">${exam.subtitle}</p>
-          <div class="exam-tags">${tagsHtml}</div>
           <div class="flex flex-between items-center mt-sm">
             <span class="text-xs text-muted">${exam.questionCount}문항</span>
             <span class="text-xs text-muted">${viewed}/${exam.questionCount} 완료</span>
@@ -110,8 +107,8 @@
             <button class="btn ${btnClass} w-full" onclick="event.stopPropagation(); location.href='viewer.html?exam=${exam.id}'">
               ${btnText}
             </button>
-            <a href="https://colab.research.google.com/github/ashram68/aice-mock-exam-demo/blob/main/data/exam-01/AICE_%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC_1%ED%9A%8C_Titanic.ipynb" target="_blank" rel="noopener" class="btn btn-secondary" onclick="event.stopPropagation(); event.preventDefault(); if(window.openColabWithNotice){openColabWithNotice(this.href);}else{window.open(this.href,'_blank','noopener');} return false;" style="white-space:nowrap;">
-              Colab 응시
+            <a href="https://colab.research.google.com/github/ashram68/aice-mock-exam-demo/blob/main/data/exam-01/AICE_%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC_1%ED%9A%8C_Titanic.ipynb" target="_blank" rel="noopener" class="btn btn-secondary btn-colab" onclick="event.stopPropagation(); event.preventDefault(); if(window.openColabWithNotice){openColabWithNotice(this.href);}else{window.open(this.href,'_blank','noopener');} return false;">
+              <span class="colab-btn-sub">Colab 기반</span><br>모의고사 응시
             </a>
           </div>
         </div>

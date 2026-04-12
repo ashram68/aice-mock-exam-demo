@@ -134,15 +134,14 @@ h4 { font-size: 1.1rem; }
 .header .logo {
   font-family: var(--font-headline);
   font-weight: 800;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: var(--color-primary);
 }
 
-.header .logo span {
+.header .logo .logo-sub {
   color: var(--color-on-surface-variant);
-  font-weight: 400;
-  font-size: 0.875rem;
-  margin-left: 0.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
 }
 
 .header-actions {
@@ -685,6 +684,27 @@ h4 { font-size: 1.1rem; }
 .exam-card {
   position: relative;
   overflow: hidden;
+}
+
+.exam-card .flex.gap-sm {
+  align-items: stretch;
+}
+
+.exam-card .flex.gap-sm .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exam-card .flex.gap-sm .btn.btn-colab {
+  display: block;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.colab-btn-sub {
+  font-size: 0.75rem;
+  opacity: 0.65;
 }
 
 .exam-card .exam-tags {
